@@ -33,7 +33,7 @@ class CaughtExceptionsController < ApplicationController
   end
 
   def dismiss 
-   caught_exception = CaughtException.find(params[:error_id])
+   caught_exception = CaughtException.find(params[:error])
    if caught_exception 
       caught_exception.update_attribute(:dismissed, true)
       render json: { success: true } 
